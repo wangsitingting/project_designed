@@ -1,0 +1,6 @@
+<h1>我是 $introduce</h1>
+#foreach($xx in $allProducts)
+    <li>$velocityCount  $xx.title $xx.school</li>
+#end
+
+<!--#parse("../nav/nav.vm")-->

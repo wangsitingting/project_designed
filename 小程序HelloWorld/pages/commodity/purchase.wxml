@@ -1,0 +1,60 @@
+<!--pages/commodity/purchase.wxml-->
+<view class="exhibition-container">
+  <view class="navigator">
+    <view class="{{naviItemChoose}}" bindtap='tapNaviItem'>{{navigater1}}</view>
+    <view class="{{naviItem}}" bindtap='tapNaviItem'>{{navigater2}}</view>
+    <view class="{{naviItem}}" bindtap='tapNaviItem'>{{navigater3}}</view>
+    <view class="{{naviItem}}" bindtap='tapNaviItem'>{{navigater4}}</view>
+  </view>
+  <view class="list">
+    <view class="item">
+      <image src="{{image1}}" mode="aspectFit" style='width:150rpx; height:150rpx'></image>
+      <view class="item-content">
+        <view class="name">{{name1}}</view>
+        <view class="price">{{price1}}</view>
+      </view>
+      <button class="button">添加</button>
+    </view>
+    <view class="item">
+      <image src="{{image2}}" mode="aspectFit" style='width:150rpx; height:150rpx'></image>
+      <view class="item-content">
+        <view class="name">{{name2}}</view>
+        <view class="price">{{price2}}</view>
+      </view>
+      <button class="button">添加</button>
+    </view>
+    <view class="item">
+      <image src="{{image3}}" mode="aspectFit" style='width:150rpx; height:150rpx'></image>
+      <view class="item-content">
+        <view class="name">{{name3}}</view>
+        <view class="price">{{price3}}</view>
+      </view>
+      <button class="button">添加</button>
+    </view>
+    <view class="item">
+      <image src="{{image4}}" mode="aspectFit" style='width:150rpx; height:150rpx'></image>
+      <view class="item-content">
+        <view class="name">{{name4}}</view>
+        <view class="price">{{price4}}</view>
+      </view>
+      <button class="button">添加</button>
+    </view>
+    <view class="item">
+      <image src="{{image5}}" mode="aspectFit" style='width:150rpx; height:150rpx'></image>
+      <view class="item-content">
+        <view class="name">{{name5}}</view>
+        <view class="price">{{price5}}</view>
+      </view>
+      <button class="button">添加</button>
+    </view>
+  </view>
+</view>
+<view class="charge-bar">
+  <image src="/image/icons/cart-2.png" class="image" mode="aspectFit"></image>
+  <view class="charge-content">
+    <button class="charge-confirm" bindtap='confirm'>结账</button>
+    <view class="charge-price">
+      <text>合计:{{totalPrice}}</text>
+    </view>
+  </view>
+</view>

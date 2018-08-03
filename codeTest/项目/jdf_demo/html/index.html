@@ -1,0 +1,73 @@
+{%widget name="header" data='{"name":"首页"}'%}
+<!-- 当前页面入口css -->
+<link rel="stylesheet" type="text/css" href="../css/index.css">
+
+<!-- 公共nav -->
+{%widget name="nav" data='{"name":"首页111"}'%}
+<p>------------------------------------</p>
+{%widget name="test" data='{"introduce":"wangsiting"}'%}
+<p>------------------------------------</p>
+<!-- 这里没有data值 -->
+{%widget name="test" type="vm"%}
+<div>
+	<!-- 这是异步加载js的用法 -->
+    <button class="jrm-demo-btn">panel</button> 
+</div>
+
+<div class="intro">
+	<p>------------------------------------</p>
+	<ul>
+		<li>这是简单说明</li>
+		<li>文件目录介绍 <br/>
+			<textarea>
+			├── build
+			├── config.json
+			├── css
+			│   ├── i
+			│   ├── index.scss //首页入口css
+			│   └── list.scss //列表入口css
+			├── html
+			│   ├── index.html //首页
+			│   └── list.html //列表页
+			├── js
+			│   ├── index.js //首页入口js
+			│   └── list.js //列表页入口js
+			├── readme.md
+			└── widget
+			    ├── footer //公共尾部
+			    │   └── footer.vm
+			    ├── header //公共头部
+			    │   └── header.vm
+			    ├── jrmui_mixin 
+			    │   └── jrmui_mixin.scss
+			    ├── js_mod 
+			    │   └── js_mod.js //这是普通js的写法
+			    ├── js_mod_cmd 
+			    │   └── js_mod_cmd.js //这是CMD规范的js写法
+			    ├── nav
+			    │   ├── nav.json //nav的相关数据
+			    │   ├── nav.scss //nav的相关css
+			    │   └── nav.vm //vm使用示例
+			    └── nav_menu
+			        ├── nav_menu.json
+			        ├── nav_menu.scss
+			        └── nav_menu.vm
+			</textarea>
+		</li>
+		<li>widget、vm的用法可阅读hmtl/index.html widget/nav/nav.vm中相关注释 </li>
+	<ul>
+
+	<ul>	
+		<li>核心文档继续阅读请看：</li>
+		<li><a href="https://github.com/putaoshu/jdf/blob/master/doc/a_tool_develop.md">快速入门</a></li>
+		<li><a href="https://github.com/putaoshu/jdf/blob/master/doc/core_dir_standard.md">目录规范</a></li>
+		<li><a href="https://github.com/putaoshu/jdf/blob/master/doc/a_tool_config.md">配置文件文档</a></li>
+		<li><a href="https://github.com/putaoshu/jdf/blob/master/doc/a_tool_command.md">命令手册</a></li>
+	</ul>
+</div>
+
+<!-- 公共footer -->
+{%widget name="footer"%}
+
+<!-- 当前页面入口js -->
+<script src="../js/index.js" type="text/javascript"></script>

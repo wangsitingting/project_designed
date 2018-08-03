@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="ul-test">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+        </ul>
+        <ul id="test">
+        <li>
+            <p>11111111111</p>
+        </li>
+        <li>
+            <div>
+                22222222
+            </div>
+        </li>
+        <li>
+            <span>3333333333</span>
+        </li>
+        <li>4444444</li>
+    </ul>
+    <script>
+    var oUl=document.getElementById("ul-test");
+        var oLi=oUl.getElementsByTagName("li");
+        for(var i=0,len=oLi.length;i<len;i++){
+            oLi[i].onclick = function(){
+                console.log(this.innerHTML)
+            }
+        }
+        var oUl1 = document.getElementById('test');
+    oUl1.addEventListener('click',function(ev){
+        var target = ev.target;
+        while(target !== oUl1 ){
+            if(target.tagName.toLowerCase() == 'li'){
+                console.log('li click~');
+                break;
+            }
+            target = target.parentNode;
+        }
+    })
+    </script>
+</body>
+</html>

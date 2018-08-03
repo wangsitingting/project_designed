@@ -1,0 +1,15 @@
+<h1><a href="index.html">index.html</a> | <a href="list.html">list.html</a></h1>
+
+<!-- $name取自 {%widget name="nav" data='{"name":"首页"}'%} 中的 "name" -->
+<h2>This is $name !~ </h2>
+<!-- 文档可参考https://github.com/putaoshu/jdf/blob/master/doc/core_widget.md  -->
+
+<!-- vm之间可以互相引用 -->
+#parse("../nav_menu/nav_menu.vm")
+<!-- 文档可参考https://github.com/putaoshu/jdf/blob/master/doc/core_vm.md  -->
+
+<!-- vm模板迭代数据List ($velocityCount为列举序号，默认从1开始) -->
+#foreach( $product in $allProducts )
+    <li>$velocityCount  $product.title $product.content</li>
+#end
+<!-- 文档可参考https://github.com/putaoshu/jdf/blob/master/doc/core_vm.md -->

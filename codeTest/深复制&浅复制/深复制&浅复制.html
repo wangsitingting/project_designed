@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	function simpleClone(initalObj) {
+    var obj = {};
+    for ( var i in initalObj) {
+        obj[i] = initalObj[i];
+    }
+    return obj;
+}
+var obj = {
+    a: "hello",
+    b: {
+        a: "world",
+        b: 21
+    },
+    c: ["Bob", "Tom", "Jenny"],
+    d: function() {
+        alert("hello world");
+    }
+}
+var cloneObj = simpleClone(obj); // 对象拷贝
+  
+/*console.log(cloneObj.b); // {a: "world", b: 21}
+console.log(cloneObj.c); // ["Bob", "Tom", "Jenny"]
+console.log(cloneObj.d); // function() { alert("hello world"); }*/
+  
+// 修改拷贝后的对象
+cloneObj.b.a = "changed";
+cloneObj.c = [1, 2, 3];
+cloneObj.d = function() { alert("changed"); };
+  
+console.log(obj.b); // {a: "changed", b: 21} // // 原对象所引用的对象被修改了
+  
+console.log(obj.c); // ["Bob", "Tom", "Jenny"] // 原对象所引用的对象未被修改
+console.log(obj.d); // function() { alert("hello world"); } // 原对象所引用的函数未被修改
+
+
+let a=[0,1,[2,3],4],
+        b=a.slice();
+a[0]=1;
+a[2][0]=1;
+console.log(a,b);
+
+
+var arr = [1,2,3,4,5];
+var arr2 = copyArr(arr);
+function copyArr(arr){
+	let res = [];
+	for(let i=0;i<arr.length;i++){
+		res.push(arr[i]);
+	}
+	return res;
+}
+arr.push(6,7,8);
+console.log(arr);
+console.log(arr2);
+
+
+var arr3 = [1,2,3];
+var arr4 = Array.from(arr3);
+arr3.push(3);
+console.log(arr3);
+console.log(arr4);
+
+
+var arr5 = [1,2,3,4,5];
+var [...arr6] = arr5;
+arr5[2]=5;
+console.log(arr5);
+console.log(arr6);
+
+
+
+var obj ={
+    name: 'FungLeo',
+    sex: 'man',
+    old: '18'
+}
+var obj2 = copyObj(obj);
+function copyObj(obj){
+    let res={};
+    for(var key in obj){
+        res[key] = obj[key];
+    }
+    return res;
+}
+obj.name = 5;
+console.log(obj);
+console.log(obj2);
+
+//对象深复制，使用扩展运算符
+var obj3 = {
+  name: 'FungLeo',
+  sex: 'man',
+  old: '18'
+}
+var {...obj4} = obj3;
+obj3.old = '33';
+console.log(obj3);
+console.log(obj4);
+
+
+var c = [{f: 1},{f:5},{f:10}];
+var obj2 = JSON.parse(JSON.stringify(c));
+console.log(obj2);
+
+
+
+</script>	
+</body>
+</html>

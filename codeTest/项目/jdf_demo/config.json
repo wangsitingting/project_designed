@@ -1,0 +1,32 @@
+{
+    "serverType": "linux",
+	  "host": "172.23.182.136",
+    "serverDir": "/export/App/m.jr.jd.com/",
+    "projectPath": "jdf_demo",    
+    "cdn": "",
+    "localServerPort": 80,
+    "build":{
+        "1isEs6": true,
+        "1hasBrowserSync": true,
+        "1hasCmdLog":true,
+        "1qrcode": true,
+        "1livereload":true,
+        "autoprefixer": true
+    },
+    "output":{
+        "jsUrlReplace": true,
+        "cssCombo": false,
+        "jsCombo": false,
+        "1compresshtml":true,
+        "1jsRemove":["console"],
+        "hasBanner":2,
+        "htmlContentReplace": [{
+            "from": "msinner.jr.jd.com",
+            "to": "ms.jr.jd.com"
+        }],
+        "jsContentReplace": [{
+            "from": "msinner.jr.jd.com",
+            "to": "ms.jr.jd.com"
+        }]
+    }
+}

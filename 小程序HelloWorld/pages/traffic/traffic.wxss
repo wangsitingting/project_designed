@@ -1,0 +1,74 @@
+/* pages/traffic/traffic.wxss */
+.flex-wrp{
+    width:100%;
+    display:flex;
+    background-color: #FFFFFF;
+}
+.flex-item{
+    width: 25%;
+    height:100%;
+    font-size: 30rpx;
+    text-align: center;
+    margin:10rpx;
+}
+.charge-discription-hide{
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    background: #ffffff;
+    border-top:1rpx inset lightgray;
+    display: none;
+}
+.charge-discription-show{
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    background: #ffffff;
+    border-top:1rpx inset lightgray;
+    display: block;
+}
+.share-discription-hide{
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    background: #ffffff;
+    border-top:1rpx inset lightgray;
+    display: none;
+}
+.share-discription-show{
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    background: #ffffff;
+    border-top:1rpx inset lightgray;
+    display: block;
+}
+.park-discription-hide{
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    background: #ffffff;
+    border-top:1rpx inset lightgray;
+    display: none;
+}
+.park-discription-show{
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    background: #ffffff;
+    border-top:1rpx inset lightgray;
+    display: block;
+}
+.title{
+  font-size: 30rpx;
+  padding-left:30rpx;
+  padding-top: 20rpx;
+}
+.content{
+  font-size: 24rpx;
+  padding-left: 30rpx;
+  padding-bottom: 20rpx;
+}
+.content-text{
+  padding-top:20rpx;
+}

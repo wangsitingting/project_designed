@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//不使用indexOf()
+	var arr = ['apple','orange','pear'];
+	found = false;
+	for(var i=0,l=arr.length;i<l;i++){
+		if(arr[i]==='orange'){
+			found = true;
+		}
+	}
+	console.log('found:',found);
+//使用indexOf()
+	console.log("found:",arr.indexOf("orange")!=-1);
+
+
+
+//不使用filter()
+	var arr3 = [
+		{"name":"apple","count":2},
+		{"name":"orange","count":5},
+		{"name":"pear","count":3},
+		{"name":"orange","count":16}
+	];
+	var newArr = [];
+	for(var i=0,l=arr3.length;i<l;i++){
+		if(arr3[i].name ==='orange'){
+			newArr.push(arr3[i]);
+		}
+	}
+	console.log('Filter results:',newArr);
+//使用filter()
+	var newArr = arr3.filter(function(item){
+		return item.name === 'orange';
+	});
+	console.log("Filter results:",newArr);
+
+//不使用forEach()
+	var arr4 = [1,2,3,4,5,6,7,8];
+	for(var i=0,l = arr4.length;i<l;i++){
+		console.log(arr4[i]);
+	}
+	console.log("====================");
+//使用forEach
+	arr4.forEach(function(item,index){
+		console.log(item);
+	})
+
+//不使用map,浅复制
+	var oldArr = [
+	{first_name:'Colon',last_name:'Toh'},
+	{first_name:'Addy',last_name:'Osmani'},
+	{first_name:'Yehuda',last_name:'Katz'}
+	];
+	function getNewArr(){
+		var newArr = [];
+		for(var i=0,l=oldArr.length;i<l;i++){
+			var item = oldArr[i];
+			item.full_name = [item.first_name,item.last_name].join(" ");
+			newArr[i] = item;
+		}
+		return newArr;
+	}
+	console.log(getNewArr());
+	console.log(oldArr);
+//使用map
+function getNewArr(){
+	return oldArr.map(function(item,index){
+		item.full_name = [item.first_name,item.last_name].join(" ");
+		return item;
+	})
+}
+console.log(getNewArr());
+console.log(oldArr);
+
+
+//不使用reduce()
+	var arr5 = ['apple','orange','apple','orange','pear','orange'];
+	function getWordCnt(){
+		var obj = {};
+		for(var i=0,l=arr5.length;i<l;i++){
+			var item = arr5[i];
+			obj[item] = (obj[item]+1) || 1;
+		}
+		return obj;
+	}
+	console.log(getWordCnt());
+</script>
+</body>
+</html>

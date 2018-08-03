@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="page">
+        <div class="content main">
+            <div class="refer">
+                <ul>
+                    <li>click1</li>
+                    <li>click2</li>
+                    <li>click3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    var genCssSelector=function(){
+        //you code here
+        var ele=arguments[0];
+        var parentEle=ele.parentNode;
+        var strGenCssSelector=ele.tagName.toLowerCase();
+        while(parentEle.nodeName.toLowerCase()!=='#document'){
+            if(parentEle.id!==''){
+                strGenCssSelector='#'+parentEle.id+' '+strGenCssSelector;
+                parentEle=parentEle.parentNode;      
+                continue;
+            }else if(parentEle.className!=''){
+                    strGenCssSelector=' '+strGenCssSelector;
+                    var classList=parentEle.classList||parentEle.className.split(' ');
+                    for(var i=0;i<classList.length;i++){
+                        strGenCssSelector='.'+classList[i]+strGenCssSelector;
+                    }
+                    parentEle=parentEle.parentNode;      
+                    continue;
+            }else{
+                    strGenCssSelector=parentEle.nodeName.toLowerCase()+' '+strGenCssSelector;
+                    parentEle=parentEle.parentNode;   
+                    continue;
+            } 
+
+        }
+        return strGenCssSelector;
+    }
+    document.addEventListener('click',function(e){
+        //点击li时，返回html body #page .content.main .refer ul li
+        alert(genCssSelector(e.target));
+    })
+</script>
+</html>

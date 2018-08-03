@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{date}}
+    <span v-html="link"></span>
+    <span v-pre>{{这里的内容是不会被编译的}}</span>
+    {{number / 10}}
+    {{IsOk ? '确定' : '取消'}}
+    {{text.split(',').reverse().join(',')}}
+</div>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            date:new Date(),
+            link:'<a href ="#">这是一个链接</a>',
+            number:100,
+            IsOk:false,
+            text:'123,456'
+        },
+        mounted:function () {
+            var _this = this;  //声明一个变量指向Vue实例this,保证作用域一致
+            this.timer = setInterval(function(){
+                _this.date = new Date();   //修改数据date
+            },1000)
+        },
+        beforeDestroy:function(){
+            if(this.timer){
+                clearInterval(this.timer);  //在vue实例销毁前，清除定时器
+            }
+        }
+    })
+</script>
+</body>
+</html>

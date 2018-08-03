@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    .container{
+      display: flex;
+      width:500px;
+      border:1px #000 solid;
+    }
+    
+    .left{
+      flex-shink:2;
+    }
+  .right,.left ,.main{
+      flex-basis:100px;
+      
+      display: inline-block;
+      background-color: red;
+  }
+  .main{
+      width:50px;
+      background-color: blue;
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+  <div class="main">1</div>
+  <div class="left">2</div>
+  <div class="right">3</div>
+</div>
+</body>
+</html>

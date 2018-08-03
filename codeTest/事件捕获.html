@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width:300px;
+            height:300px;
+            border-radius:50%;
+            background-color:red;
+        }
+        #box2{
+            width:200px;
+            height:200px;
+            border-radius:50%;
+            background-color:blue;
+            margin:auto;
+        }
+        #box3{
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            background-color:yellow;
+            margin:auto;
+        }
+        #box4{
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            background-color:green;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+<ul id ='ul'>
+    <li id="li_1">1</li>
+    <li id="li_2">1</li>
+    <li id="li_3">1</li>
+    <li id="li_4">1</li>
+</ul>
+<div id ='parent'>parent
+    <div id="child">child</div>
+</div>
+
+<div id="box1">
+    <div id="box2">
+        <div id="box3">
+            <div id="box4"></div>
+        </div>
+    </div>
+</div>
+<script>
+    var oUl = document.getElementById('ul');
+    var aLi = document.getElementsByClassName('li');
+    oUl.addEventListener('click',function(e){
+        alert(e.target.id);
+    },false)
+
+   /* document.getElementById('parent').addEventListener('click',function(e){
+        alert('parent事件被触发，'+this.id);
+    },true)
+    document.getElementById('child').addEventListener('click',function(e){
+        alert('child事件被触发，'+this.id);
+    },true)  //捕获，先parent再child*/
+
+    document.getElementById('parent').addEventListener('click',function(e){
+        alert('parent事件被触发，'+e.target.id);
+    })
+    document.getElementById('child').addEventListener('click',function(e){
+        alert('child事件被触发，'+e.target.id);
+    })  //捕获，先parent再child
+
+    /*document.getElementById('box1').addEventListener('click',function(e){
+        alert(e.target.id);
+    },true)*/
+
+    document.getElementById('box1').addEventListener('click',function(e){
+        if(e.target.)
+    },true)
+</script>
+</body>
+</html>

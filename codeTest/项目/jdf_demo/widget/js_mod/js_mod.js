@@ -1,0 +1,1 @@
+console.log("这是普通js的写法");

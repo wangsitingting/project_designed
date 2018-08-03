@@ -1,0 +1,13 @@
+{
+  "name":"test.vm",
+  "allProducts":[
+    {
+      "title": "陕西西安",
+      "school": "西安邮电大学"
+    },
+    {
+      "title": "XXXX",
+      "school": "XXXX"
+    }
+  ]
+}

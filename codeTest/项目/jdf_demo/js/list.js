@@ -1,0 +1,1 @@
+console.log("这是list页面的入口js");

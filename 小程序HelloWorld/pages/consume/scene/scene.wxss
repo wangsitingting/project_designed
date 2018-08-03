@@ -1,0 +1,37 @@
+/* pages/consume/scene/scene.wxss */
+.discription-hide{
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    background: #ffffff;
+    border-top:1rpx inset lightgray;
+    display: none;
+}
+.discription-show{
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    background: #ffffff;
+    border-top:1rpx inset lightgray;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.title{
+  font-size: 30rpx;
+}
+.content{
+  font-size: 24rpx;
+  padding-left: 30rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  width:70%;
+}
+.button{
+  width:30%;
+  margin: 10rpx;
+  text-align: center;
+  text-decoration: underline;
+}
+.content-text{
+  padding-top:20rpx;
+}

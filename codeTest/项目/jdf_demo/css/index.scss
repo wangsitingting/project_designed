@@ -1,0 +1,14 @@
+@import "../widget/jrmui_mixin/jrmui_mixin";
+
+.index{
+	color:#333;
+}
+
+textarea{
+	height:$rem400;
+	width:100%;
+}
+
+.intro li{
+	list-style: square;
+}

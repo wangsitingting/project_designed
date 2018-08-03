@@ -1,0 +1,13 @@
+{
+    "name":"nav.vm",
+    "allProducts":[
+        {
+            "title": "河南标题", 
+            "content": "河南内容" 
+        }, 
+        {
+            "title": "河北标题", 
+            "content": "河北内容"
+        }
+    ]
+}

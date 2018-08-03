@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+    async function test() {
+
+    }
+    let result = test()
+    console.log(result)    //打印出promise对象
+
+
+    async function test1() {
+        let result = await Promise.resolve('success')
+        console.log(result)
+    }
+    test1()
+
+    function  fn() {
+        return new Promise((resolve)=>{
+            setTimeout(()=>{
+                resolve('success')
+            })
+        })
+    }
+
+    async function test2(){
+        let result = await fn()  //因为fn会返回一个Promise对象
+        console.log(result)
+    }
+    test2()
+
+
+
+    let promiseDemo = new Promise((resolve,reject) => {
+        setTimeout(()=> {
+            let random = Math.random()
+            if (random >=0.5){
+                resolve('success')
+            }else {
+                reject('failed')
+            }
+        },1000)
+    })
+    async function test3() {
+        let result = await promiseDemo
+        return result   //这里的result是promiseDemo成功状态的值，如果失败了，代码就直接跳到下面的catch了
+    }
+    test3().then(response => {
+        console.log(response)
+    }).catch(error => {
+        console.log(error)
+    })
+
+
+    function ft(name) {
+        return new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                resolve(`${name}成功`)
+            })
+        })
+    }
+    async function test4() {
+        let p1 = await ft('小红')
+        let p2 = await ft('小明')
+        let p3 = await ft('小华')
+        return [p1,p2,p3]
+    }
+    test4().then(result => {
+        console.log(result)
+    }).catch(result => {
+        console.log(result)
+    })
+
+
+
+    //执行顺序
+    console.log(1)
+    let promiseDemo2 = new Promise((resolve, reject) => {
+        console.log(2)
+        setTimeout(() => {
+            let random = Math.random()
+            if (random >= 0.2) {
+                resolve('success')
+                console.log(3)
+            } else {
+                reject('failed')
+                console.log(3)
+            }
+        }, 1000)
+    })
+
+    async function test5() {
+        console.log(4)
+        let result = await promiseDemo2
+        return result
+    }
+
+    test5().then(result => {
+        console.log(5)
+    }).catch((result) => {
+        console.log(5)
+    })
+
+    console.log(6)
+
+</script>
+</body>
+</html>
